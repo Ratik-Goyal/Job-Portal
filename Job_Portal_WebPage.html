@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #e8f5e9;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header, section, footer {
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Dream Job Lander</h1>
+            <p>This is job portal helps you to find your dream job or internship.</p>
+        </div>
+        <nav>
+            <a href="#companies">Companies |  </a>
+            <a href="#jobs">Jobs |   </a>
+            <a href="#services">Services</a>
+        </nav>
+    </header>
+
+    <div style="padding: 20px;">
+        <input type="text" id="searchInput" placeholder="Search jobs..." onkeyup="searchJobs()" style="padding: 8px; width: 300px; margin-right: 10px;">
+        <select id="categoryFilter" onchange="filterJobs()" style="padding: 8px;">
+            <option value="all">All Categories</option>
+            <option value="tech">Technology</option>
+            <option value="marketing">Marketing</option>
+            <option value="data">Data & Analytics</option>
+            <option value="design">Design</option>
+        </select>
+    </div>
+
+    <section>
+        <h2>Available Jobs</h2>
+        <article>
+            <h3> Software Developer Intern at TechCorp <a href="github.com"></a></h3>
+            <p> Join TechCorp as a Software Developer Intern and work on cutting-edge technologies. Gain hands-on experience in software development, collaborate with a dynamic team, and contribute to real-world projects.</p>
+            <a href="github">Apply Now</a>
+        </article>
+        <article>
+            <h3> Frontend Developer at WebSolutions <a href="github.com"></a></h3>
+            <p> WebSolutions is looking for a talented Frontend Developer to create stunning user interfaces. Work with the latest frontend frameworks and enhance your skills in web development while delivering exceptional user experiences.</p>
+            <a href="github">Apply Now</a>
+        </article>
+        <article>
+            <h3> Data Analyst at DataInsights <a href="github.com"></a></h3>
+            <p> DataInsights is seeking a Data Analyst to help interpret complex datasets and provide actionable insights. Utilize your analytical skills and knowledge of data visualization tools to support business decision-making.</p>
+            <a href="github">Apply Now</a>
+        </article>
+        <article>
+            <h3> Marketing Intern at MarketMinds <a href="github.com"></a></h3>
+            <p> MarketMinds is offering a Marketing Internship for enthusiastic individuals. Gain experience in digital marketing strategies, social media management, and campaign analysis while working with a creative team.</p>
+            <a href="github">Apply Now</a>
+        </article>
+        <article data-category="tech">
+            <h3>Backend Developer at CloudTech</h3>
+            <p>CloudTech seeks a Backend Developer to build scalable server-side applications. Work with modern frameworks and cloud technologies to create robust APIs and microservices.</p>
+            <a href="#">Apply Now</a>
+        </article>
+        <article data-category="design">
+            <h3>UI/UX Designer at DesignHub</h3>
+            <p>DesignHub is looking for a creative UI/UX Designer to craft intuitive user experiences. Create wireframes, prototypes, and visual designs for web and mobile applications.</p>
+            <a href="#">Apply Now</a>
+        </article>
+        <article data-category="data">
+            <h3>Machine Learning Engineer at AI Solutions</h3>
+            <p>AI Solutions needs a Machine Learning Engineer to develop intelligent systems. Apply your knowledge of ML algorithms and data science to solve complex business problems.</p>
+            <a href="#">Apply Now</a>
+        </article>
+        <article data-category="marketing">
+            <h3>Content Writer at ContentPro</h3>
+            <p>ContentPro is hiring a Content Writer to create engaging content across multiple platforms. Develop blog posts, social media content, and marketing materials that resonate with audiences.</p>
+            <a href="#">Apply Now</a>
+        </article>
+        <article data-category="tech">
+            <h3>DevOps Engineer at InfraTech</h3>
+            <p>InfraTech seeks a DevOps Engineer to streamline development and deployment processes. Implement CI/CD pipelines, manage cloud infrastructure, and ensure system reliability.</p>
+            <a href="#">Apply Now</a>
+        </article>
+        <article data-category="data">
+            <h3>Business Intelligence Analyst at MetricsLab</h3>
+            <p>MetricsLab is looking for a BI Analyst to transform data into actionable insights. Create dashboards, reports, and visualizations to support strategic decision-making.</p>
+            <a href="#">Apply Now</a>
+        </article>
+    </section>
+
+    <footer>
+        <div>
+            <h3>Dream Job Lander</h3>
+            <p>Your trusted partner in finding the perfect job or internship opportunity.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <nav>
+                <a href="#about">About Us</a> |
+                <a href="#contact">Contact</a> |
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#terms">Terms of Service</a>
+            </nav>
+        </div>
+        <div>
+            <h4>Follow Us</h4>
+            <a href="https://linkedin.com">LinkedIn</a> |
+            <a href="https://twitter.com">Twitter</a> |
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:info@dreamjoblander.com">info@dreamjoblander.com</a></p>
+            <p>Phone: +91 98148-20247</p>
+        </div>
+        <p>&copy; 2026 Dream Job Lander. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchJobs() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const filter = document.getElementById('categoryFilter').value;
+            const articles = document.querySelectorAll('article');
+            
+            articles.forEach(article => {
+                const text = article.textContent.toLowerCase();
+                const category = article.getAttribute('data-category');
+                const matchesSearch = text.includes(input);
+                const matchesFilter = filter === 'all' || category === filter;
+                article.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
+            });
+        }
+        
+        function filterJobs() {
+            searchJobs();
+        }
+    </script>
+</body>
+</html>
