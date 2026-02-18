@@ -1,0 +1,23 @@
+body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f4f4; }
+header { background-color: #2c3e50; color: white; padding: 20px; }
+header h1 { margin: 0; }
+header p { margin: 5px 0; }
+nav a { color: #3498db; margin-right: 15px; }
+.form-container, .search-filter { background: white; padding: 20px; margin: 20px; border: 1px solid #ddd; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group textarea, .form-group select, .search-filter input, .search-filter select { width: 100%; padding: 8px; border: 1px solid #ccc; box-sizing: border-box; }
+.form-group textarea { height: 80px; }
+.btn { padding: 10px 20px; border: none; cursor: pointer; color: white; }
+.btn-primary { background-color: #3498db; }
+.btn-warning { background-color: #f39c12; }
+.btn-danger { background-color: #e74c3c; }
+section { margin: 20px; }
+article, .job-card { background: white; padding: 20px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+article h3, .job-card h3 { color: #2c3e50; margin: 0 0 10px 0; font-size: 1.3em; }
+.job-card p { color: #555; line-height: 1.5; margin: 8px 0; }
+article a { display: inline-block; margin-top: 10px; padding: 8px 15px; background-color: #3498db; color: white; text-decoration: none; }
+.job-actions { margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; }
+.job-actions button { margin-right: 5px; }
+footer { background-color: #2c3e50; color: white; padding: 20px; margin-top: 30px; }
+footer a { color: #3498db; }
