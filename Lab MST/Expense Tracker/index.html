@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    
+    <div>
+        <label>Expense Name:</label>
+        <input type="text" id="expenseName">
+    </div>
+    
+    <div>
+        <label>Amount:</label>
+        <input type="number" id="amount">
+    </div>
+    
+    <div>
+        <label>Category:</label>
+        <select id="category">
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Shopping</option>
+        </select>
+    </div>
+    
+    <button onclick="addExpense()">Add</button>
+    <button onclick="updateExpense()">Update</button>
+    <button onclick="deleteExpense()">Delete</button>
+    
+    <h2 id="total">Total: 0</h2>
+    
+    <table border="1" id="expenseTable">
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Category</th>
+        </tr>
+    </table>
+    
+    <script src="script.js"></script>
+</body>
+</html>

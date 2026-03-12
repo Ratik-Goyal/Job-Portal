@@ -1,0 +1,33 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+h1 {
+    color: blue;
+}
+
+div {
+    margin: 10px 0;
+}
+
+input, select {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
