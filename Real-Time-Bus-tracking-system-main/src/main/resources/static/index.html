@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Bus Tracking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet Map Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+</head>
+<body>
+    <div id="loginContainer" class="container">
+        <div class="login-box">
+            <h1>Bus Tracking System</h1>
+            <p class="subtitle">For Indian Buses</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                
+                <button type="submit" class="btn-login">Login</button>
+                
+                <p class="toggle-link">
+                    Don't have an account? <a href="#" onclick="toggleForms()">Register here</a>
+                </p>
+            </form>
+            
+            <div id="loginError" class="error-message"></div>
+        </div>
+        
+        <div class="login-box" id="registerBox" style="display:none;">
+            <h1>Register</h1>
+            <p class="subtitle">Create Your Account</p>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Full Name:</label>
+                    <input type="text" id="regName" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regEmail">Email:</label>
+                    <input type="email" id="regEmail" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword">Password:</label>
+                    <input type="password" id="regPassword" name="password" required placeholder="Enter password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPhone">Phone:</label>
+                    <input type="tel" id="regPhone" name="phone" required placeholder="Enter your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="regCity">City:</label>
+                    <input type="text" id="regCity" name="city" placeholder="Enter your city">
+                </div>
+                
+                <button type="submit" class="btn-login">Register</button>
+                
+                <p class="toggle-link">
+                    Already have an account? <a href="#" onclick="toggleForms()">Login here</a>
+                </p>
+            </form>
+            
+            <div id="registerError" class="error-message"></div>
+            <div id="registerSuccess" class="success-message"></div>
+        </div>
+    </div>
+    
+    <div id="trackingContainer" style="display:none;" class="tracking-container">
+        <header class="header">
+            <h1>Real-Time Bus Tracking</h1>
+            <div class="user-info">
+                <span id="userName"></span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="search-section">
+                <h2>Search Buses</h2>
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="source">From:</label>
+                        <input type="text" id="source" placeholder="Enter source city">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="destination">To:</label>
+                        <input type="text" id="destination" placeholder="Enter destination city">
+                    </div>
+                    
+                    <button onclick="searchBuses()" class="btn-search">Search Buses</button>
+                </div>
+            </div>
+            
+            <div id="busResults" class="bus-results">
+                <h3>Available Buses</h3>
+                <div id="busList" class="bus-list"></div>
+            </div>
+            
+            <div id="activeBuses" class="active-buses">
+                <h3>All Active Buses</h3>
+                <button onclick="loadActiveBuses()" class="btn-view">View All Active Buses</button>
+                <div id="activeBusList" class="bus-list"></div>
+            </div>
+
+            <div id="mapSection" class="map-section">
+                <h2>Live Bus Tracking Map</h2>
+                <div class="map-controls">
+                    <button onclick="showAllBusesOnMap()" class="btn-map">Show All Buses on Map</button>
+                    <button onclick="autoRefreshMap()" class="btn-map" id="autoRefreshBtn">Auto-Refresh: OFF</button>
+                </div>
+                <div id="busMap" class="bus-map"></div>
+                <div id="mapInfo" class="map-info"></div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

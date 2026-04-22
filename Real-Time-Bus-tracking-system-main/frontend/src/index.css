@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+    min-height: 100vh;
+    color: #374151;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 24px;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mb-3 {
+    margin-bottom: 24px;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.p-3 {
+    padding: 24px;
+}
+
+.p-2 {
+    padding: 16px;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.4s ease-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
